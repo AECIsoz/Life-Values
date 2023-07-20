@@ -11,6 +11,7 @@
 body {
   border: 20px solid rgb(159, 166, 190);
   margin: 35px;
+  background-color: aliceblue;
 }
 
 .app {
