@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style copy.css">
+    <title>Livsvärden</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Livsvärden</h1>
+    </nav>
+    <div class="app">
+        <form name="livsvarden" method="post" data-netlify="true" id="questions">
+            <div id="intro" class="content-div">
+                <h2>Instruktioner</h2>
+                <p>Beskriv vad du värderar inom varje område utifrån ett idealt tillstånd. Se även förklaring under varje textruta.</p>
+                <p>Gradera hur viktigt detta värde är för dig på en skala från 1 till 10 <em>(där 1 är mest viktigt och 10 minst viktigt, och du kan ha samma siffra på flera områden)</em>. Gradera också från 1 till 10 nuläget, hur du lyckats leva efter dessa värden de senaste månaderna.</p>
+                <p>När du har svarat på alla områden ska du rangordna dem från 1-9 hur viktiga du tycker att var och en av dem är att arbeta med <strong>omgående</strong>. Fundera också över vad som eventuellt hindrar dig från att leva enligt dem. Tänk på dessa frågor utifrån värden som gäller när som helst i livet, inte utifrån en relation, det arbete eller de vänner du har just nu, utan oavsett det.</p>
+            </div>
+            <div id="q0" class="content-div">
+                <h2 id="l0">Nära relationer</h2>
+                <textarea id="a0" value='' class="answer"></textarea>
+                <div class="ratings">
+                    <label for="importance">Viktighet</label>
+                    <input type="number" id="importance0">
+                    <label for="current-status">Nuläge</label>
+                    <input type="number" id="current0">
+                    <label>1 är mest och 10 minst viktigt</label>
+                </div>
+                <p>Beskriv hur du vill vara i en nära relation, hur du vill vara som partner. Skriv vilken typ av förhållande du vill ha, vad som är viktigt i förhållandet. Försök att fokusera på din roll i relationen, d.v.s. på det som är möjligt att påverka.
+                </p>
+            </div>
+            <div id="q1" class="content-div">
+                <h2 id="l1">Familjerelationer</h2>
+                <textarea id="a1" value='' class="answer"></textarea>
+                <div class="ratings">
+                    <label for="importance">Viktighet</label>
+                    <input type="number" id="importance1">
+                    <label for="current-status">Nuläge</label>
+                    <input type="number" id="current1">
+                </div>
+                <p>Beskriv hur du vill vara som bror/syster, far/mor, son/dotter. Beskriv vilka kvaliteter du vill ha i dessa relationer. Beskriv hur du skulle behandla andra i dessa relationer om du vore ditt perfekta jag.
+                </p>
+            </div>
+            <div id="q2" class="content-div">
+                <h2 id="l2">Sociala relationer</h2>
+                <textarea type="text" id="a2" value='' class="answer"></textarea>
+                <div class="ratings">
+                    <label for="importance">Viktighet</label>
+                    <input type="number" id="importance2">
+                    <label for="current-status">Nuläge</label>
+                    <input type="number" id="current2">
+                </div>
+                <p>Skriv vad det innebär att vara en god vän. Om du hade möjlighet att vara en perfekt vän, hur skulle du bete dig då? Försök att beskriva ett idealiskt vänskapsförhållande. Hur vill du att ditt sociala liv ska se ut?
+                </p>
+            </div>
+            <div id="q3" class="content-div">
+                <h2 id="l3">Arbete</h2>
+                <textarea type="text" id="a3" value='' class="answer"></textarea>
+                <div class="ratings">
+                    <label for="importance">Viktighet</label>
+                    <input type="number" id="importance3">
+                    <label for="current-status">Nuläge</label>
+                    <input type="number" id="current3">
+                </div>
+                <p>Beskriv den typ av arbete du vill arbeta med, det kan vara specifikt eller generellt. Kom ihåg att det är en idealvärld vi föreställer oss. Beskriv på vilket sätt detta perfekta arbete tilltalar dig. Fundera sedan på vilken typ av medarbetare du vill vara. Hur vill du att dina arbetsrelationer ska se ut?
+                </p>
+            </div>
+            <div id="q4" class="content-div">
+                <h2 id="l4">Utbildning och personlig utveckling</h2>
+                <textarea type="text" id="a4" value='' class="answer"></textarea>
+                <div class="ratings">
+                    <label for="importance">Viktighet</label>
+                    <input type="number" id="importance4">
+                    <label for="current-status">Nuläge</label>
+                    <input type="number" id="current4">
+                    <p>1 är mest viktigt</p>
+                </div>
+                <p>Beskriv vilken typ av utbildning som tilltalar dig eller vad som är viktigt för dig i din personliga utveckling. Det kan gälla både formell och informell utbildning.
+                </p>
+            </div>
+            <div id="q5" class="content-div">
+                <h2 id="l5">Rekreation och fritid</h2>
+                <textarea type="text" id="a5" value='' class="answer"></textarea>
+                <div class="ratings">
+                    <label for="importance">Viktighet</label>
+                    <input type="number" id="importance5">
+                    <label for="current-status">Nuläge</label>
+                    <input type="number" id="current5">
+                </div>
+                <p>Beskriv det sorts rekreationsliv du vill leva. Det handlar om vad som ger dig påfyllning av energi och lust. Tänk på hobbies, sporter och fritidsaktiviteter, men också på vila, avkoppling och avskildhet.
+                </p>
+            </div>
+            <div id="q6" class="content-div">
+                <h2 id="l6">Andlighet och syn på livet</h2>
+                <textarea type="text" id="a6" value='' class="answer"></textarea>
+                <div class="ratings">
+                    <label for="importance">Viktighet</label>
+                    <input type="number" id="importance6">
+                    <label for="current-status">Nuläge</label>
+                    <input type="number" id="current6">
+                </div>
+                <p>Hur vi ser på livet och oss själva i ett större sammanhang. Det behöver inte innebära någon organsierad religion, men kan ändå handla om livsfilosofi, gudstro eller helt enkelt vad du själv lägger i begreppet andlighet.
+                </p>
+            </div>
+            <div id="q7" class="content-div">
+                <h2 id="l7">Samhällsengagemang</h2>
+                <textarea type="text" id="a7" value='' class="answer"></textarea>
+                <div class="ratings">
+                    <label for="importance">Viktighet</label>
+                    <input type="number" id="importance7">
+                    <label for="current-status">Nuläge</label>
+                    <input type="number" id="current7">
+                </div>
+                <p>För somliga människor är det viktigt att delta i samhälleliga angelägenheter. Vissa tycker till exempel att det är viktigt att arbete som volontär för hemlösa eller med äldre människor. Andra vill delta i politik eller i grupper som engagerar sig i vissa sakfrågor. Vad är viktigt för dig som medborgare i samhället?
+                </p>
+            </div>
+            <div id="q8" class="content-div">
+                <h2 id="l8">Hälsa och fysiskt välmående</h2>
+                <textarea type="text" id="a8" value='' class="answer"></textarea>
+                <div class="ratings">
+                    <label for="importance">Viktighet</label>
+                    <input type="number" id="importance8">
+                    <label for="current-status">Nuläge</label>
+                    <input type="number" id="current8">
+                </div>
+                <p>Här kan du skriva om dina värderingar som är relaterade till att bibehålla fysisk hälsa. På vilket sätt är hälsa viktigt för dig? Tänk hälsorelaterade ämnen som sömn, rökning, motion, diet och så vidare.
+                </p>
+            </div>
+            <section class="btn-section">
+                <button type="button" id="back-btn" class="prev">Bakåt</button>
+                <button type="button" id="see-result">Se svar</button>
+                <button type="button" id="next-btn" class="next">Nästa</button>
+            </section>
+        </form>
+
+
+
+        <div id="result">
+            <h2>Dina svar:</h2>
+            <p>Klicka och dra dina svar till rutan till höger för att rangordna dem från viktigast till minst viktig</p>
+            <div id="container">
+                <div id="container-left">
+                    <div id="result0" class="drag" draggable="true"></div>
+                    <div id="result1" class="drag" draggable="true"></div>
+                    <div id="result2" class="drag" draggable="true"></div>
+                    <div id="result3" class="drag" draggable="true"></div>
+                    <div id="result4" class="drag" draggable="true"></div>
+                    <div id="result5" class="drag" draggable="true"></div>
+                    <div id="result6" class="drag" draggable="true"></div>
+                    <div id="result7" class="drag" draggable="true"></div>
+                    <div id="result8" class="drag" draggable="true"></div>
+                </div>
+                <div id="container-right">
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+                    <div class="empty"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
