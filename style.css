@@ -5,6 +5,8 @@
 4. Formulär
 5. Resultatfält
 6. Knappar
+7. Drag & drop
+8. Utskrift
 */
 
 /* 1. Hela applikationen */
@@ -191,6 +193,10 @@ button:hover {
     color: rgb(86, 171, 142);
 }
 
+#print-btn {
+    align-self: flex-end;
+}
+
 /* 7. Drag and drop */
 
 .hide {
@@ -208,4 +214,20 @@ button:hover {
     align-items: center;
 
     margin: 20px 0;
+}
+
+/* 8. Utskrift */
+
+@media print {
+    body {
+        border: none;
+    }
+    form, 
+    #container-left {
+        display: none;
+    }
+
+    #container-right {
+        width: 100%;
+    }
 }

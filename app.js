@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+//document.addEventListener('DOMContentLoaded', () => {
 
     // en funktion för att rensa innehållet i formuläret när man klickar se svar-knappen
     function clearInput() {
@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const seeResult = document.getElementById('see-result')
     seeResult.addEventListener('click', addAnswer)
-    //seeResult.addEventListener('click', clearInput)
+    
+    const saveBtn = document.getElementById('save-btn')
+    saveBtn.addEventListener('click', saveAnswer)
 
     // samla alla divs för frågorna i en NodeList 
     let qElems = document.querySelectorAll('#questions>div');
@@ -40,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-    // // funktion som bläddrar bakåt och visar förra fråga när man klickar på bakåt-knappen
+    // funktion som bläddrar bakåt och visar förra fråga när man klickar på bakåt-knappen
     function back() {
         for (let j = 0; j < qElems.length; j++) {
             if (qElems[j].style.display != 'none') {
@@ -55,15 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    /* https://codepen.io/mmousawy/pen/LedZPa
+    let inputTextarea = document.querySelectorAll('.answer')
+
+    function saveAnswer () {
+        localStorage.setItem('savedanswer', inputTextarea.value)
+        inputTextarea.textContent = inputTextarea.value
+    }
+    inputTextarea.textContent = localStorage.getItem('savedanswer')*/
+
     // skapa variabel för att lägga in svaren i arrayer
     let answerArray = []
     let headingArray = []
     let importanceArray = []
     let currentArray = []
-    //let answers = []
-
-    localStorage.setItem('stored.value', JSON.stringify(answerArray))
-    console.log(answerArray)
     
     // funktion som körs när man klickar Se svar och som lägger till alla svar i individuella divs
     function addAnswer() {
@@ -144,4 +151,4 @@ document.addEventListener('DOMContentLoaded', () => {
         // display the draggable element
         draggable.classList.remove('hide')
     }
-})
+//})
