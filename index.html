@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
@@ -12,45 +12,48 @@
     <title>Livsvärden</title>
 </head>
 
-<body>
+<body onload="load(0);load(1)">
     <nav>
         <h1>Livsvärden</h1>
     </nav>
     <div class="app">
-        <form name="livsvarden" method="post" data-netlify="true" id="questions">
+        <div name="livsvarden" id="questions">
             <div id="intro" class="content-div">
                 <h2>Instruktioner</h2>
                 <p>Beskriv vad du värderar inom varje område utifrån ett idealt tillstånd. Se även förklaring under varje textruta.</p>
                 <p>Gradera hur viktigt detta värde är för dig på en skala från 1 till 10 <em>(där 1 är mest viktigt och 10 minst viktigt, och du kan ha samma siffra på flera områden)</em>. Gradera också från 1 till 10 nuläget, hur du lyckats leva efter dessa värden de senaste månaderna.</p>
                 <p>När du har svarat på alla områden ska du rangordna dem från 1-9 hur viktiga du tycker att var och en av dem är att arbeta med <strong>omgående</strong>. Fundera också över vad som eventuellt hindrar dig från att leva enligt dem. Tänk på dessa frågor utifrån värden som gäller när som helst i livet, inte utifrån en relation, det arbete eller de vänner du har just nu, utan oavsett det.</p>
             </div>
-            <div id="q0" class="content-div">
+            <form id="form0" class="content-div">
                 <h2 id="l0">Nära relationer</h2>
-                <textarea id="a0" value='' class="answer"></textarea>
+                <textarea type="text" name="Svar" id="a0" value='' class="answer"></textarea>
                 <div class="ratings">
                     <label for="importance">Viktighet</label>
-                    <input type="number" id="importance0">
+                    <input type="number" name="Viktighet" id="importance0" value="">
                     <label for="current-status">Nuläge</label>
-                    <input type="number" id="current0">
-                    <label>1 är mest och 10 minst viktigt</label>
+                    <input type="number" name="Nuläge" id="current0" value="">
+                    <label>1 är mest och 10 minst</label>
                 </div>
                 <p>Beskriv hur du vill vara i en nära relation, hur du vill vara som partner. Skriv vilken typ av förhållande du vill ha, vad som är viktigt i förhållandet. Försök att fokusera på din roll i relationen, d.v.s. på det som är möjligt att påverka.
                 </p>
-                <button type="button" id="save-btn">Spara</button>
-            </div>
-            <div id="q1" class="content-div">
+                <button type="button" onclick="displayResult(0)">Spara</button>
+            </form>
+            <form id="form1" class="content-div">
                 <h2 id="l1">Familjerelationer</h2>
-                <textarea id="a1" value='' class="answer"></textarea>
+                <textarea id="a1" value='' class="answer" name="Svar"></textarea>
                 <div class="ratings">
                     <label for="importance">Viktighet</label>
-                    <input type="number" id="importance1">
+                    <input type="number" id="importance1" name="Viktighet">
                     <label for="current-status">Nuläge</label>
-                    <input type="number" id="current1">
+                    <input type="number" id="current1" name="Nuläge">
                 </div>
                 <p>Beskriv hur du vill vara som bror/syster, far/mor, son/dotter. Beskriv vilka kvaliteter du vill ha i dessa relationer. Beskriv hur du skulle behandla andra i dessa relationer om du vore ditt perfekta jag.
                 </p>
-            </div>
-            <div id="q2" class="content-div">
+                <button type="button" onclick="displayResult(1)">Spara</button>
+
+            </form>
+            <form id="form2" class="content-div">
+
                 <h2 id="l2">Sociala relationer</h2>
                 <textarea type="text" id="a2" value='' class="answer"></textarea>
                 <div class="ratings">
@@ -61,8 +64,9 @@
                 </div>
                 <p>Skriv vad det innebär att vara en god vän. Om du hade möjlighet att vara en perfekt vän, hur skulle du bete dig då? Försök att beskriva ett idealiskt vänskapsförhållande. Hur vill du att ditt sociala liv ska se ut?
                 </p>
-            </div>
-            <div id="q3" class="content-div">
+                <button type="button" onclick="displayResult(2)">Spara</button>
+            </form>
+            <form id="form3" class="content-div">
                 <h2 id="l3">Arbete</h2>
                 <textarea type="text" id="a3" value='' class="answer"></textarea>
                 <div class="ratings">
@@ -73,8 +77,9 @@
                 </div>
                 <p>Beskriv den typ av arbete du vill arbeta med, det kan vara specifikt eller generellt. Kom ihåg att det är en idealvärld vi föreställer oss. Beskriv på vilket sätt detta perfekta arbete tilltalar dig. Fundera sedan på vilken typ av medarbetare du vill vara. Hur vill du att dina arbetsrelationer ska se ut?
                 </p>
-            </div>
-            <div id="q4" class="content-div">
+                <button type="button" onclick="displayResult(3)">Spara</button>
+            </form>
+            <form id="form4" class="content-div">
                 <h2 id="l4">Utbildning och personlig utveckling</h2>
                 <textarea type="text" id="a4" value='' class="answer"></textarea>
                 <div class="ratings">
@@ -86,8 +91,9 @@
                 </div>
                 <p>Beskriv vilken typ av utbildning som tilltalar dig eller vad som är viktigt för dig i din personliga utveckling. Det kan gälla både formell och informell utbildning.
                 </p>
-            </div>
-            <div id="q5" class="content-div">
+                <button type="button" onclick="displayResult(4)">Spara</button>
+            </form>
+            <form id="form5" class="content-div">
                 <h2 id="l5">Rekreation och fritid</h2>
                 <textarea type="text" id="a5" value='' class="answer"></textarea>
                 <div class="ratings">
@@ -98,8 +104,9 @@
                 </div>
                 <p>Beskriv det sorts rekreationsliv du vill leva. Det handlar om vad som ger dig påfyllning av energi och lust. Tänk på hobbies, sporter och fritidsaktiviteter, men också på vila, avkoppling och avskildhet.
                 </p>
-            </div>
-            <div id="q6" class="content-div">
+                <button type="button" onclick="displayResult(5)">Spara</button>
+            </form>
+            <form id="form6" class="content-div">
                 <h2 id="l6">Andlighet och syn på livet</h2>
                 <textarea type="text" id="a6" value='' class="answer"></textarea>
                 <div class="ratings">
@@ -110,8 +117,9 @@
                 </div>
                 <p>Hur vi ser på livet och oss själva i ett större sammanhang. Det behöver inte innebära någon organsierad religion, men kan ändå handla om livsfilosofi, gudstro eller helt enkelt vad du själv lägger i begreppet andlighet.
                 </p>
-            </div>
-            <div id="q7" class="content-div">
+                <button type="button" onclick="displayResult(6)">Spara</button>
+            </form>
+            <form id="form7" class="content-div">
                 <h2 id="l7">Samhällsengagemang</h2>
                 <textarea type="text" id="a7" value='' class="answer"></textarea>
                 <div class="ratings">
@@ -122,8 +130,9 @@
                 </div>
                 <p>För somliga människor är det viktigt att delta i samhälleliga angelägenheter. Vissa tycker till exempel att det är viktigt att arbete som volontär för hemlösa eller med äldre människor. Andra vill delta i politik eller i grupper som engagerar sig i vissa sakfrågor. Vad är viktigt för dig som medborgare i samhället?
                 </p>
-            </div>
-            <div id="q8" class="content-div">
+                <button type="button" onclick="displayResult(7)">Spara</button>
+            </form>
+            <form id="form8" class="content-div">
                 <h2 id="l8">Hälsa och fysiskt välmående</h2>
                 <textarea type="text" id="a8" value='' class="answer"></textarea>
                 <div class="ratings">
@@ -134,31 +143,59 @@
                 </div>
                 <p>Här kan du skriva om dina värderingar som är relaterade till att bibehålla fysisk hälsa. På vilket sätt är hälsa viktigt för dig? Tänk hälsorelaterade ämnen som sömn, rökning, motion, diet och så vidare.
                 </p>
-            </div>
+                <button type="button" onclick="displayResult(8)">Spara</button>
+            </form>
             <section class="btn-section">
                 <button type="button" id="back-btn" class="prev">Bakåt</button>
-                <button type="button" id="see-result">Se svar</button>
                 <button type="button" id="next-btn" class="next">Nästa</button>
+                <button type="button" onclick="clearStorage()">Rensa svar</button>
+
             </section>
-        </form>
-
-
+        </div>
 
         <div id="result">
             <h2>Dina svar:</h2>
             <p>Klicka och dra dina svar till rutan till höger för att rangordna dem från viktigast till minst viktig</p>
             <div id="container">
+                
                 <div id="container-left">
-                    <div id="result0" class="drag" draggable="true"></div>
-                    <div id="result1" class="drag" draggable="true"></div>
-                    <div id="result2" class="drag" draggable="true"></div>
-                    <div id="result3" class="drag" draggable="true"></div>
-                    <div id="result4" class="drag" draggable="true"></div>
-                    <div id="result5" class="drag" draggable="true"></div>
-                    <div id="result6" class="drag" draggable="true"></div>
-                    <div id="result7" class="drag" draggable="true"></div>
-                    <div id="result8" class="drag" draggable="true"></div>
+                    <div id="result0" class="drag" draggable="true">
+                        <h2>Nära relationer</h2>
+                    </div>
+
+                    <div id="result1" class="drag" draggable="true">
+                        <h2>Familjerelationer</h2>
+                    </div>
+
+                    <div id="result2" class="drag" draggable="true">
+                        <h2>Sociala relationer</h2>
+                    </div>
+
+                    <div id="result3" class="drag" draggable="true">
+                        <h2>Arbete</h2>
+                    </div>
+
+                    <div id="result4" class="drag" draggable="true">
+                        <h2>Utbildning och personlig utveckling</h2>
+                    </div>
+
+                    <div id="result5" class="drag" draggable="true">
+                        <h2>Rekreation och fritid</h2>
+                    </div>
+
+                    <div id="result6" class="drag" draggable="true">
+                        <h2>Andlighet och syn på livet</h2>
+                    </div>
+
+                    <div id="result7" class="drag" draggable="true">
+                        <h2>Samhällsengagemang</h2>
+                    </div>
+
+                    <div id="result8" class="drag" draggable="true">
+                        <h2>Hälsa och fysiskt välmående</h2>
+                    </div>
                 </div>
+
                 <div id="container-right">
                     <div class="empty"></div>
                     <div class="empty"></div>
@@ -172,12 +209,11 @@
                     <div class="empty"></div>
                     <div class="empty"></div>
                 </div>
+                <button type="button" id="print-btn" onclick="print()">Skriv ut</button>
             </div>
-            <button type="button" id="print-btn" onclick="print()">Skriv ut</button>
         </div>
-    </div>
 
-    <script src="app.js"></script>
+        <script src="app.js"></script>
 </body>
 
 </html>
