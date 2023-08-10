@@ -60,12 +60,12 @@ nav {
 
 /* 4. Formulär */
 
-form, #result {
+#questions, #result {
     padding: 30px;
     border-radius: 10px;
 }
 
-form {
+#questions {
     display: flex;
     flex-direction: column;
     width: 40%;
@@ -107,7 +107,7 @@ input {
     flex-direction: column;
 }
 
-#intro {
+#form0 {
     display: flex
 }
 
@@ -120,28 +120,8 @@ input {
     align-items: flex-start;
     width: 90%;
     margin-top: 20px;
-    background-color: rgb(255, 255, 255, 0.7);
 }
 
-#result0,
-#result1,
-#result2,
-#result3,
-#result4,
-#result5,
-#result6,
-#result7,
-#result8 {
-    background-color: rgb(255, 255, 255, 0.7);
-}
-
-.display-results {
-    
-    padding: 10px;
-    margin: 10px 20px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1em;
-}
 
 #container {
     display: flex;
@@ -165,6 +145,12 @@ input {
 #container-right {
     border: 2px solid rgb(166, 207, 243);
     margin-left: 10px;
+}
+
+#container-left div {
+    padding: 10px;
+    background-color: aliceblue;
+    border: 1px solid blue;
 }
 
 /* 6. Knappar */
