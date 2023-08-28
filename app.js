@@ -69,7 +69,7 @@ let currentArray = []
 let resultArray = []
 
 
-// funktion som körs när man klickar Se svar och som lägger till alla svar i individuella divs
+// funktion som körs när man klickar spara och som lägger till alla svar i individuella divs
 function addAnswer() {
     for (let l = 0; l < qElems.length; l++) {
         answerArray.push(document.getElementById('a' + l).value)
@@ -80,7 +80,7 @@ function addAnswer() {
     console.log(answerArray, importanceArray, currentArray, resultArray)
 }
 
-addAnswer()
+
 /*let answer0 = document.getElementById('a0').value
 console.log(answer0)
 let importance0 = document.getElementById('importance0').value
@@ -91,6 +91,8 @@ let displayAnswer0 = document.getElementById('result0')*/
 
 // spara input från formulär i object och local storage
 function displayResult(num) {
+    addAnswer()
+    console.log(answerArray)
     let displayAnswer = document.getElementById('result' + num)
     localStorage.setItem('text'+num, answerArray[num])
     localStorage.setItem('importance'+num, importanceArray[num])
@@ -98,14 +100,14 @@ function displayResult(num) {
     displayAnswer.innerHTML += localStorage.getItem('text'+num)
     displayAnswer.innerHTML += '<h4>Viktighet: ' + localStorage.getItem('importance'+num) + '</h4>'
     displayAnswer.innerHTML += '<h4>Nuläge: ' + localStorage.getItem('current'+num) + '</h4>'
-    load(num)
 }
 
 function load(num) {
     if (localStorage.getItem('text'+num, 'importance'+num, 'current'+num)) {
-            console.log(localStorage.getItem('text'+num))
+            //console.log(localStorage.getItem('text'+num))
             let displayAnswer = document.getElementById('result' + num)
             document.getElementById('a' + num).value = localStorage.getItem('text'+num )
+            console.log(localStorage.getItem('text'+num))
             document.getElementById('importance' + num).value = localStorage.getItem('importance'+num)
             document.getElementById('current' + num).value = localStorage.getItem('current'+num)
             displayAnswer.innerHTML += localStorage.getItem('text'+num)
@@ -113,6 +115,19 @@ function load(num) {
             displayAnswer.innerHTML += '<h4>Nuläge: ' + localStorage.getItem('current'+num) + '</h4>'
     }
 }
+
+function loadAll() {
+    load(0);
+    load(1);
+    load(2);
+    load(3);
+    load(4);
+    load(5);
+    load(6);
+    load(7);
+    load(8);
+}
+
 
 
 function clearStorage() {

@@ -149,8 +149,8 @@ input {
 
 #container-left div {
     padding: 10px;
-    background-color: aliceblue;
-    border: 1px solid blue;
+    background-color: rgba(86, 171, 143, 0.2);
+    margin-bottom: 10px;
 }
 
 /* 6. Knappar */
